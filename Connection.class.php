@@ -6,7 +6,7 @@
  * @author Lucas
  */
 class Connection extends mysqli {
-    
+
     /**
      *
      * @var bool
@@ -30,16 +30,15 @@ class Connection extends mysqli {
         return self::$_instance;
     }
 
-}
-
-public function close() {
-
-if(self:_connected) {
-parent::close();
-self:_connected = false;
-}
-}
-public function close() {
+    /**
+     *
+     */
+    public function close() {
+        if(self::$_connected) {
+            parent::close();
+            self::$_connected = false;
+        }
+    }
 
 }
 
