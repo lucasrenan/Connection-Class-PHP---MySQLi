@@ -5,7 +5,31 @@
  *
  * @author Lucas
  */
-class Connection {
-    //put your code here
+class Connection extends mysqli {
+    
+    /**
+     *
+     * @var bool
+     */
+    private static $_connected = false;
+
+    /**
+     *
+     * @var Connection
+     */
+    private static $_instance = null;
+
+    /**
+     *
+     * @return Connection
+     */
+    public static function getInstance() {
+        if(self::$_instance === null) {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
+
 }
+
 ?>
