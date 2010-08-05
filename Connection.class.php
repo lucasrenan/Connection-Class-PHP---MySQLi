@@ -32,4 +32,15 @@ class Connection extends mysqli {
 
 }
 
+public function close() {
+
+if(self:_connected) {
+parent::close();
+self:_connected = false;
+}
+}
+public function close() {
+
+}
+
 ?>
