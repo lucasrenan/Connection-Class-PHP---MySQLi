@@ -20,7 +20,7 @@ class Connection extends mysqli {
     private static $_instance = null;
 
     /**
-     * 
+     *
      */
     public function  __destruct() {
         $this->close();
