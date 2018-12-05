@@ -74,7 +74,7 @@ class Connection extends mysqli {
      */
     public function query($sql) {
         $this->connect();
-        $result = parent::query(mysql_escape_string($sql));
+        $result = parent::query(mysqli::escape_string($sql));
 
         if($result) {
             return $result;
